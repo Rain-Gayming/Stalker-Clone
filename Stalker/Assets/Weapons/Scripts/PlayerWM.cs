@@ -9,6 +9,7 @@ public class PlayerWM : MonoBehaviour
     [Header("Reference")]
     public InputManager inputs;
 
+    //hahalol
     [Header("Weapons")]
     public WeaponManager currentWeapon;
     public WeaponManager primaryWeapon;
