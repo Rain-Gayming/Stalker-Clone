@@ -29,6 +29,12 @@ namespace RainGayming.Combat
             {
                 currentWeapon.Attack();
             }
+            if (inputs.reloadInput)
+            {
+                inputs.reloadInput = false;
+                RangedWM ranged = currentWeapon as RangedWM;
+                ranged.Reload();
+            }
         }
 
     }
