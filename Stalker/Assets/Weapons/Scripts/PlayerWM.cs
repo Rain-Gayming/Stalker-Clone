@@ -4,29 +4,32 @@ using RainGayming.Combat;
 using RainGayming.Inputs;
 using UnityEngine;
 
-public class PlayerWM : MonoBehaviour
+namespace RainGayming.Combat
 {
-    [Header("Reference")]
-    public InputManager inputs;
-
-    //hahalol
-    [Header("Weapons")]
-    public WeaponManager currentWeapon;
-    public WeaponManager primaryWeapon;
-    public WeaponManager secondaryWeapon;
-    public WeaponManager sideWeapon;
-
-    private void Start()
+    public class PlayerWM : MonoBehaviour
     {
-        inputs = InputManager.instance;
-    }
+        [Header("Reference")]
+        public InputManager inputs;
 
-    public void Update()
-    {
-        if (inputs.attackInput)
+
+        [Header("Weapons")]
+        public WeaponManager currentWeapon;
+        public WeaponManager primaryWeapon;
+        public WeaponManager secondaryWeapon;
+        public WeaponManager sideWeapon;
+
+        private void Start()
         {
-            currentWeapon.Attack();
+            inputs = InputManager.instance;
         }
-    }
 
+        public void Update()
+        {
+            if (inputs.attackInput)
+            {
+                currentWeapon.Attack();
+            }
+        }
+
+    }
 }
