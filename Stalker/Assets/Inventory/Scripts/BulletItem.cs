@@ -6,7 +6,7 @@ using UnityEngine;
 namespace RainGayming.Inventory
 {
     [CreateAssetMenu(menuName = "Inventory/Bullet")]
-    public class BulletItem : WeaponItem
+    public class BulletItem : ItemObject
     {
         [Header("Bullet Info")]
         public int fleshDamage;

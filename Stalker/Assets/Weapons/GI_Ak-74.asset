@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c5d2296b8993b14b8ba20f39493d372, type: 3}
+  m_Name: GI_Ak-74
+  m_EditorClassIdentifier: 
+  itemName: 
+  baseDescription: 
+  canStack: 0
+  itemID: 2
+  itemDBLocation: ItemDatabase
+  itemDb: {fileID: 11400000, guid: 541b4c16644a72c4aa71dfd9552ee23c, type: 2}
+  maxDegradation: 0
+  baseDamage: 0
+  attackTime: 0
+  baseVelocity: 0
