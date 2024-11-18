@@ -21,4 +21,4 @@ MonoBehaviour:
   maxDegradation: 0
   baseDamage: 0
   attackTime: 0
-  baseVelocity: 0
+  baseVelocity: 300

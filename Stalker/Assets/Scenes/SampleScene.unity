@@ -1000,7 +1000,11 @@ PrefabInstance:
       objectReference: {fileID: 99923094}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5270298697844325443, guid: f0cb2ec20d4071e43b691fd8c032ec9f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1499099490}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4785087877870954233, guid: f0cb2ec20d4071e43b691fd8c032ec9f,
         type: 3}
@@ -1025,9 +1029,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98ea3f229c2864442b710e3b717760af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunInfo: {fileID: 11400000, guid: 2e880d63475ba764284ba8315a1d600f, type: 2}
+  fireTime: 0
   currentAmmo: 0
-  muzzleLocation: {fileID: 0}
-  currentBullet: {fileID: 0}
+  muzzleLocation: {fileID: 1499099490}
+  currentBullet: {fileID: 11400000, guid: d6afee5cd9b8bf5458fe489ed35f693c, type: 2}
+--- !u!4 &99923095 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5270298697844325443, guid: f0cb2ec20d4071e43b691fd8c032ec9f,
+    type: 3}
+  m_PrefabInstance: {fileID: 99923092}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &106995432
 GameObject:
   m_ObjectHideFlags: 0
@@ -8697,6 +8709,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1489744428}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1499099489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1499099490}
+  m_Layer: 0
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1499099490
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499099489}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.00003, y: 0.001433, z: 0.005295}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 99923095}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1503921226
 GameObject:
   m_ObjectHideFlags: 0

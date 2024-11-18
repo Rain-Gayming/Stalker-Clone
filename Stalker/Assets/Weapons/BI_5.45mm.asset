@@ -18,9 +18,7 @@ MonoBehaviour:
   itemID: 0
   itemDBLocation: ItemDatabase
   itemDb: {fileID: 11400000, guid: 541b4c16644a72c4aa71dfd9552ee23c, type: 2}
-  maxDegradation: 0
-  baseDamage: 0
-  attackTime: 0
   fleshDamage: 0
   piercing: 0
-  bulletObject: {fileID: 0}
+  bulletObject: {fileID: 2014289220428568213, guid: 0ee7d3b9504bc8d4cb07b2af8170df32,
+    type: 3}
