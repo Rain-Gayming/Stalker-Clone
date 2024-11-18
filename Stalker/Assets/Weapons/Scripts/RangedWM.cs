@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using RainGayming.Inputs;
 using RainGayming.Inventory;
 using UnityEngine;
 
@@ -11,6 +12,8 @@ namespace RainGayming.Combat
         [Header("Gun Info")]
         public GunItem gunInfo;
         public float fireTime;
+        public FireMode currentFireMode;
+        public bool canShoot;
 
         [Header("Bullets")]
         public int currentAmmo;
@@ -20,6 +23,12 @@ namespace RainGayming.Combat
         private void Update()
         {
             fireTime -= Time.deltaTime;
+
+            if (!canShoot && fireTime <= 0 && !InputManager.instance.attackInput)
+            {
+                canShoot = true;
+                print("Can Shoot");
+            }
         }
 
         public void Reload()
@@ -29,16 +38,31 @@ namespace RainGayming.Combat
 
         public override void Attack()
         {
-            if (fireTime <= 0 && currentAmmo > 0)
+            if (fireTime <= 0 && currentAmmo > 0 && canShoot)
             {
-                GameObject newBullet = Instantiate(currentBullet.bulletObject);
-                newBullet.GetComponent<BulletObject>().gunInfo = gunInfo;
-                newBullet.transform.position = muzzleLocation.transform.position;
-                newBullet.transform.rotation = muzzleLocation.transform.rotation;
+                switch (currentFireMode)
+                {
+                    case FireMode.semi:
+                        Shoot();
+                        canShoot = false;
+                        break;
 
-                currentAmmo--;
-                fireTime = gunInfo.attackTime;
+                    case FireMode.auto:
+                        Shoot();
+                        break;
+                }
             }
+        }
+
+        public void Shoot()
+        {
+            GameObject newBullet = Instantiate(currentBullet.bulletObject);
+            newBullet.GetComponent<BulletObject>().gunInfo = gunInfo;
+            newBullet.transform.position = muzzleLocation.transform.position;
+            newBullet.transform.rotation = muzzleLocation.transform.rotation;
+
+            currentAmmo--;
+            fireTime = gunInfo.attackTime;
         }
     }
 

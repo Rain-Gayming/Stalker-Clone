@@ -10,5 +10,6 @@ namespace RainGayming.Inventory
     {
         [Header("Gun Info")]
         public float baseVelocity;
+        public List<FireMode> fireModes;
     }
 }
