@@ -28,6 +28,7 @@ namespace RainGayming.Inputs
         public bool sideInput;
         public bool primaryInput;
         public bool secondaryInput;
+        public bool fireSwitchInput;
 
         private void Awake()
         {
@@ -62,6 +63,8 @@ namespace RainGayming.Inputs
             inputs.Combat.primary.canceled += _ => primaryInput = false;
             inputs.Combat.secondary.performed += _ => secondaryInput = true;
             inputs.Combat.secondary.canceled += _ => secondaryInput = false;
+            inputs.Combat.fireSwitch.performed += _ => fireSwitchInput = true;
+            inputs.Combat.fireSwitch.canceled += _ => fireSwitchInput = false;
         }
     }
 }

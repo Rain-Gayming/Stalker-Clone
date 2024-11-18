@@ -262,6 +262,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""fireSwitch"",
+                    ""type"": ""Button"",
+                    ""id"": ""f8fbc1c9-6afd-444b-84ca-7c1e68100098"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -330,6 +339,17 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""reload"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b1b4a331-e29a-421b-a12d-088babca90e9"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""fireSwitch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -353,6 +373,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_Combat_secondary = m_Combat.FindAction("secondary", throwIfNotFound: true);
         m_Combat_side = m_Combat.FindAction("side", throwIfNotFound: true);
         m_Combat_reload = m_Combat.FindAction("reload", throwIfNotFound: true);
+        m_Combat_fireSwitch = m_Combat.FindAction("fireSwitch", throwIfNotFound: true);
     }
 
     ~@PlayerInputs()
@@ -543,6 +564,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_Combat_secondary;
     private readonly InputAction m_Combat_side;
     private readonly InputAction m_Combat_reload;
+    private readonly InputAction m_Combat_fireSwitch;
     public struct CombatActions
     {
         private @PlayerInputs m_Wrapper;
@@ -553,6 +575,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @secondary => m_Wrapper.m_Combat_secondary;
         public InputAction @side => m_Wrapper.m_Combat_side;
         public InputAction @reload => m_Wrapper.m_Combat_reload;
+        public InputAction @fireSwitch => m_Wrapper.m_Combat_fireSwitch;
         public InputActionMap Get() { return m_Wrapper.m_Combat; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -580,6 +603,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @reload.started += instance.OnReload;
             @reload.performed += instance.OnReload;
             @reload.canceled += instance.OnReload;
+            @fireSwitch.started += instance.OnFireSwitch;
+            @fireSwitch.performed += instance.OnFireSwitch;
+            @fireSwitch.canceled += instance.OnFireSwitch;
         }
 
         private void UnregisterCallbacks(ICombatActions instance)
@@ -602,6 +628,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @reload.started -= instance.OnReload;
             @reload.performed -= instance.OnReload;
             @reload.canceled -= instance.OnReload;
+            @fireSwitch.started -= instance.OnFireSwitch;
+            @fireSwitch.performed -= instance.OnFireSwitch;
+            @fireSwitch.canceled -= instance.OnFireSwitch;
         }
 
         public void RemoveCallbacks(ICombatActions instance)
@@ -638,5 +667,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnSecondary(InputAction.CallbackContext context);
         void OnSide(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
+        void OnFireSwitch(InputAction.CallbackContext context);
     }
 }

@@ -9,16 +9,25 @@ namespace RainGayming.Combat
 {
     public class RangedWM : WeaponManager
     {
+        [Header("References")]
+        public InputManager inputs;
+
         [Header("Gun Info")]
         public GunItem gunInfo;
         public float fireTime;
         public FireMode currentFireMode;
+        public FireMode lastFireMode;
         public bool canShoot;
 
         [Header("Bullets")]
         public int currentAmmo;
         public Transform muzzleLocation;
         public BulletItem currentBullet;
+
+        private void Start()
+        {
+            inputs = InputManager.instance;
+        }
 
         private void Update()
         {
@@ -28,6 +37,26 @@ namespace RainGayming.Combat
             {
                 canShoot = true;
                 print("Can Shoot");
+            }
+
+            if (inputs.fireSwitchInput)
+            {
+                FireModeSwitch();
+                inputs.fireSwitchInput = false;
+            }
+        }
+
+        public void FireModeSwitch()
+        {
+            lastFireMode = currentFireMode;
+            switch (currentFireMode)
+            {
+                case FireMode.auto:
+                    if (lastFireMode == FireMode.semi)
+                    {
+
+                    }
+                    break;
             }
         }
 
