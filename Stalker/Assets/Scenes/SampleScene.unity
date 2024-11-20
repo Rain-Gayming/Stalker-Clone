@@ -1029,9 +1029,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98ea3f229c2864442b710e3b717760af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputs: {fileID: 0}
   gunInfo: {fileID: 11400000, guid: 2e880d63475ba764284ba8315a1d600f, type: 2}
   fireTime: 0
-  currentAmmo: 0
+  currentFireMode: 1
+  lastFireMode: 0
+  canShoot: 1
+  currentAmmo: 30
   muzzleLocation: {fileID: 1499099490}
   currentBullet: {fileID: 11400000, guid: d6afee5cd9b8bf5458fe489ed35f693c, type: 2}
 --- !u!4 &99923095 stripped
@@ -11012,6 +11016,7 @@ MonoBehaviour:
   sideInput: 0
   primaryInput: 0
   secondaryInput: 0
+  fireSwitchInput: 0
 --- !u!1 &1955200773
 GameObject:
   m_ObjectHideFlags: 0

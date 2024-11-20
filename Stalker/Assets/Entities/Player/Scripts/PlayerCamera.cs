@@ -30,7 +30,7 @@ namespace RainGayming.Player
         {
             //gets the mouse input
             float mouseX = inputManager.cameraLook.x * Time.deltaTime * settingsManager.sensX;
-            float mouseY = inputManager.cameraLook.y * Time.deltaTime * settingsManager.sensX;
+            float mouseY = inputManager.cameraLook.y * Time.deltaTime * settingsManager.sensY;
 
             //checks if the player wants to invert the input
             if (!settingsManager.invertCameraY)

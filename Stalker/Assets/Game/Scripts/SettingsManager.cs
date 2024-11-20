@@ -9,9 +9,9 @@ public class SettingsManager : MonoBehaviour
 
     [Header("Inputs/Camera")]
 
-    [Range(5f, 25f)]
+    [Range(5f, 50f)]
     public float sensX;
-    [Range(5f, 25f)]
+    [Range(5f, 50f)]
     public float sensY;
     public bool invertCameraX;
     public bool invertCameraY;
