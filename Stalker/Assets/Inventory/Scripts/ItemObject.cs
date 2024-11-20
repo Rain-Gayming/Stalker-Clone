@@ -13,6 +13,7 @@ namespace RainGayming.Inventory
         public string itemName;
         [TextArea] public string baseDescription;
         public bool canStack;
+        public float weight;
 
         [Header("Debug")]
         public int itemID;

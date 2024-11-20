@@ -38,25 +38,14 @@ namespace RainGayming.Combat
                 canShoot = true;
                 print("Can Shoot");
             }
-
-            if (inputs.fireSwitchInput)
-            {
-                FireModeSwitch();
-                inputs.fireSwitchInput = false;
-            }
         }
 
         public void FireModeSwitch()
         {
             lastFireMode = currentFireMode;
-            switch (currentFireMode)
-            {
-                case FireMode.auto:
-                    if (lastFireMode == FireMode.semi)
-                    {
 
-                    }
-                    break;
+            if(gunInfo.fireModes.Contains(lastFireMode + 1)){
+                print("yippe");
             }
         }
 

@@ -35,6 +35,12 @@ namespace RainGayming.Combat
                 RangedWM ranged = currentWeapon as RangedWM;
                 ranged.Reload();
             }
+            if (inputs.fireSwitchInput)
+            {
+                RangedWM ranged = currentWeapon as RangedWM;
+                ranged.FireModeSwitch();
+                inputs.fireSwitchInput = false;
+            }
         }
 
     }
