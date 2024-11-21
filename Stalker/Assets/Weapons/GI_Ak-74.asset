@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   baseDescription: 
+  generatedDescription: 'velocity: 300'
   canStack: 0
   weight: 3.75
   itemID: 0
   itemDBLocation: ItemDatabase
   itemDb: {fileID: 11400000, guid: 541b4c16644a72c4aa71dfd9552ee23c, type: 2}
+  customDescription: 0
   maxDegradation: 0
   baseDamage: 0
   attackTime: 0.16666

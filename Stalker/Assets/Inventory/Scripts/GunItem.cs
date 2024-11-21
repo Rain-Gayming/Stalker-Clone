@@ -13,5 +13,12 @@ namespace RainGayming.Inventory
         public float baseVelocity;
         [BoxGroup("Gun Info")]
         public List<FireMode> fireModes;
+
+        public override void SetDescription()
+        {
+            base.SetDescription();
+
+            generatedDescription = "velocity: " + baseVelocity;
+        }
     }
 }
