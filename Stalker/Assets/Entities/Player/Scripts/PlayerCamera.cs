@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 using RainGayming.Inputs;
+using RainGayming.Settings;
 
 namespace RainGayming.Player
 {
