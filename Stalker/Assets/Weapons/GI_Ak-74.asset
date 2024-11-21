@@ -15,7 +15,8 @@ MonoBehaviour:
   itemName: 
   baseDescription: 
   canStack: 0
-  itemID: 1
+  weight: 3.75
+  itemID: 0
   itemDBLocation: ItemDatabase
   itemDb: {fileID: 11400000, guid: 541b4c16644a72c4aa71dfd9552ee23c, type: 2}
   maxDegradation: 0

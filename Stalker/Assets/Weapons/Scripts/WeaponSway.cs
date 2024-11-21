@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using RainGayming.Inventory;
+using RainGayming.Inventory;    
 
 namespace RainGayming.Combat
 {
