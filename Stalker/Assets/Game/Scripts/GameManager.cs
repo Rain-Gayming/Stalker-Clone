@@ -33,6 +33,7 @@ namespace RainGayming.Game
 
         private void Start()
         {
+            playerWM = PlayerWM.instance;
             cursorManager = CursorManager.instance;
             inputManager = InputManager.instance;
         }

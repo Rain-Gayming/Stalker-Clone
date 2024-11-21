@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 2852047328165170826}
   - component: {fileID: 2244971436138704751}
   - component: {fileID: 8532706967255287006}
-  m_Layer: 0
+  - component: {fileID: 1901970095845643232}
+  m_Layer: 8
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2014289220428568213}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -52.545288, y: 1.4400989, z: -36.055737}
+  m_LocalPosition: {x: 0, y: 0, z: -306.05573}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -48,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 8532706967255287006}
   gunInfo: {fileID: 0}
-  bulletInfo: {fileID: 0}
+  bulletInfo: {fileID: 11400000, guid: d6afee5cd9b8bf5458fe489ed35f693c, type: 2}
 --- !u!54 &8532706967255287006
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -76,6 +77,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &1901970095845643232
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014289220428568213}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.10301967, y: 0.080343895, z: 0.25791788}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7613610851366681014
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,7 +110,7 @@ GameObject:
   - component: {fileID: 5255686973678644054}
   - component: {fileID: 7812612701621139852}
   - component: {fileID: 6347264374196423390}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

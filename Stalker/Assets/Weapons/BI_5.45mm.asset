@@ -14,11 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: 
   baseDescription: 
+  generatedDescription: "flesh damage: 18 \narmour penetration 0"
   canStack: 0
-  itemID: 0
+  weight: 0
+  itemID: 1
   itemDBLocation: ItemDatabase
   itemDb: {fileID: 11400000, guid: 541b4c16644a72c4aa71dfd9552ee23c, type: 2}
-  fleshDamage: 0
+  customDescription: 0
+  fleshDamage: 18
   piercing: 0
   bulletObject: {fileID: 2014289220428568213, guid: 0ee7d3b9504bc8d4cb07b2af8170df32,
     type: 3}

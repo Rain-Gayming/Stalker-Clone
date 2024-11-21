@@ -37,7 +37,7 @@ namespace RainGayming.Combat
 
         public void Update()
         {
-            if (isPaused)
+            if (!isPaused)
             {
                 if (inputs.attackInput)
                 {

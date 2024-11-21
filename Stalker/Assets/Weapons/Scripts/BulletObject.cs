@@ -13,7 +13,7 @@ namespace RainGayming.Combat
 
         public void Start()
         {
-            rb.AddForce(transform.forward * gunInfo.baseVelocity * 150);
+            rb.AddForce(transform.forward * gunInfo.baseVelocity * 15);
         }
     }
 }
