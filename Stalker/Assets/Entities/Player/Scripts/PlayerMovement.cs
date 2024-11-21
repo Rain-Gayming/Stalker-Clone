@@ -58,6 +58,8 @@ namespace RainGayming.Player
         public bool hasWallInfront;
         [BoxGroup("Step")]
         public Transform wallCheckPoint;
+        [BoxGroup("Step")]
+        public LayerMask whatIsStepable;
 
         [BoxGroup("Debug")]
         public float horizontalInput;
@@ -91,7 +93,7 @@ namespace RainGayming.Player
                     if (hasWallInfront)
                     {
                         //checks if the wall isnt too high
-                        if (!Physics.Raycast(wallCheckPoint.position, groundCheckPoint.forward, wallDistance, whatIsGround))
+                        if (!Physics.Raycast(wallCheckPoint.position, groundCheckPoint.forward, wallDistance, whatIsStepable))
                         {
                             //sets the players y pos to the right one
                             transform.position = new Vector3(transform.position.x, transform.position.y + maxStepHeight, transform.position.z);

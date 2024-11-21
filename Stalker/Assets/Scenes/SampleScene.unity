@@ -517,7 +517,7 @@ GameObject:
   - component: {fileID: 33162122}
   - component: {fileID: 33162121}
   - component: {fileID: 33162120}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -910,8 +910,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1645050980034498014, guid: f0cb2ec20d4071e43b691fd8c032ec9f,
         type: 3}
+      propertyPath: jumpHeight
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645050980034498014, guid: f0cb2ec20d4071e43b691fd8c032ec9f,
+        type: 3}
+      propertyPath: groundRadius
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645050980034498014, guid: f0cb2ec20d4071e43b691fd8c032ec9f,
+        type: 3}
       propertyPath: maxStepHeight
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645050980034498014, guid: f0cb2ec20d4071e43b691fd8c032ec9f,
+        type: 3}
+      propertyPath: whatIsStepable.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 4030305165412602333, guid: f0cb2ec20d4071e43b691fd8c032ec9f,
         type: 3}
@@ -1644,7 +1659,7 @@ GameObject:
   - component: {fileID: 220137114}
   - component: {fileID: 220137113}
   - component: {fileID: 220137112}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1749,7 +1764,7 @@ GameObject:
   - component: {fileID: 230253039}
   - component: {fileID: 230253038}
   - component: {fileID: 230253037}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2189,6 +2204,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 329374901}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &335213481 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5762896950169684282, guid: 1cf153dbb1f71ce4e80295e0708a55de,
+    type: 3}
+  m_PrefabInstance: {fileID: 1356528895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &340098137
 GameObject:
   m_ObjectHideFlags: 0
@@ -2306,7 +2327,7 @@ GameObject:
   - component: {fileID: 359283789}
   - component: {fileID: 359283788}
   - component: {fileID: 359283787}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3253,7 +3274,7 @@ GameObject:
   - component: {fileID: 526606122}
   - component: {fileID: 526606121}
   - component: {fileID: 526606120}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3785,7 +3806,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 674895977}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Staircase (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3834,7 +3855,7 @@ GameObject:
   - component: {fileID: 700094143}
   - component: {fileID: 700094142}
   - component: {fileID: 700094141}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3939,7 +3960,7 @@ GameObject:
   - component: {fileID: 722337183}
   - component: {fileID: 722337182}
   - component: {fileID: 722337181}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4358,7 +4379,7 @@ GameObject:
   - component: {fileID: 777150643}
   - component: {fileID: 777150642}
   - component: {fileID: 777150641}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4861,7 +4882,7 @@ GameObject:
   - component: {fileID: 847330998}
   - component: {fileID: 847330997}
   - component: {fileID: 847330996}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5312,7 +5333,7 @@ GameObject:
   - component: {fileID: 976608992}
   - component: {fileID: 976608991}
   - component: {fileID: 976608990}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5561,7 +5582,7 @@ GameObject:
   - component: {fileID: 1002274724}
   - component: {fileID: 1002274723}
   - component: {fileID: 1002274722}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6055,7 +6076,7 @@ GameObject:
   - component: {fileID: 1078909409}
   - component: {fileID: 1078909408}
   - component: {fileID: 1078909407}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6228,7 +6249,7 @@ GameObject:
   - component: {fileID: 1128057323}
   - component: {fileID: 1128057322}
   - component: {fileID: 1128057321}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6330,7 +6351,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1150121490}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Staircase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6379,7 +6400,7 @@ GameObject:
   - component: {fileID: 1155395947}
   - component: {fileID: 1155395946}
   - component: {fileID: 1155395945}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7186,7 +7207,7 @@ GameObject:
   - component: {fileID: 1265598509}
   - component: {fileID: 1265598508}
   - component: {fileID: 1265598507}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7489,6 +7510,56 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1292255476}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1309946027
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1309946029}
+  - component: {fileID: 1309946028}
+  m_Layer: 0
+  m_Name: Ultimate Editor Enhancer References
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1309946028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309946027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a46b737512f948c0a1e2352a94d18709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bookmarks:
+  - title: Entity (1)
+    type: UnityEngine.GameObject, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    target: {fileID: 335213481}
+  hierarchyBackgrounds: []
+--- !u!4 &1309946029
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309946027}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1314346861
 GameObject:
   m_ObjectHideFlags: 0
@@ -7816,7 +7887,7 @@ GameObject:
   - component: {fileID: 1332963611}
   - component: {fileID: 1332963610}
   - component: {fileID: 1332963609}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7845,7 +7916,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1332963607}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: bcfe6203f3966e743a70fbc1ff03f5e9, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -7921,7 +7992,7 @@ GameObject:
   - component: {fileID: 1351222936}
   - component: {fileID: 1351222935}
   - component: {fileID: 1351222934}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8199,7 +8270,7 @@ GameObject:
   - component: {fileID: 1366660304}
   - component: {fileID: 1366660303}
   - component: {fileID: 1366660302}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8514,7 +8585,7 @@ GameObject:
   - component: {fileID: 1419029269}
   - component: {fileID: 1419029268}
   - component: {fileID: 1419029267}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8619,7 +8690,7 @@ GameObject:
   - component: {fileID: 1427503491}
   - component: {fileID: 1427503490}
   - component: {fileID: 1427503489}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8909,7 +8980,7 @@ GameObject:
   - component: {fileID: 1489744432}
   - component: {fileID: 1489744431}
   - component: {fileID: 1489744430}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9150,7 +9221,7 @@ GameObject:
   - component: {fileID: 1527572210}
   - component: {fileID: 1527572209}
   - component: {fileID: 1527572208}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10204,7 +10275,7 @@ GameObject:
   - component: {fileID: 1814024537}
   - component: {fileID: 1814024536}
   - component: {fileID: 1814024535}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10309,7 +10380,7 @@ GameObject:
   - component: {fileID: 1817533833}
   - component: {fileID: 1817533832}
   - component: {fileID: 1817533831}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10587,7 +10658,7 @@ GameObject:
   - component: {fileID: 1844247416}
   - component: {fileID: 1844247415}
   - component: {fileID: 1844247414}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10692,7 +10763,7 @@ GameObject:
   - component: {fileID: 1844585486}
   - component: {fileID: 1844585485}
   - component: {fileID: 1844585484}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10902,7 +10973,7 @@ GameObject:
   - component: {fileID: 1867444638}
   - component: {fileID: 1867444637}
   - component: {fileID: 1867444636}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11007,7 +11078,7 @@ GameObject:
   - component: {fileID: 1878058053}
   - component: {fileID: 1878058052}
   - component: {fileID: 1878058051}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11535,7 +11606,7 @@ GameObject:
   - component: {fileID: 2003061953}
   - component: {fileID: 2003061952}
   - component: {fileID: 2003061951}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12107,7 +12178,7 @@ GameObject:
   - component: {fileID: 2111389314}
   - component: {fileID: 2111389313}
   - component: {fileID: 2111389312}
-  m_Layer: 3
+  m_Layer: 7
   m_Name: Step
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12502,3 +12573,4 @@ SceneRoots:
   - {fileID: 99923092}
   - {fileID: 1213743685}
   - {fileID: 1458287468}
+  - {fileID: 1309946029}
