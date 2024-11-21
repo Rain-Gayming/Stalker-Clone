@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using QFSW.QC;
+using Sirenix.OdinInspector;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
@@ -14,22 +15,34 @@ namespace RainGayming.Inputs
         PlayerInputs inputs;
         public bool isPaused;
         public QuantumKeyConfig consoleKey;
-        [Header("Movement Inputs")]
+        [BoxGroup("Movement Inputs")]
         public Vector2 movementInput;
+        [BoxGroup("Movement Inputs")]
+
         public bool jumpInput;
+        [BoxGroup("Movement Inputs")]
+
         public bool sprintInput;
+        [BoxGroup("Movement Inputs")]
+
         public bool crouchInput;
 
-        [Header("Camera")]
+        [BoxGroup("Camera")]
         public Vector2 cameraLook;
 
-        [Header("Combat")]
+        [BoxGroup("Combat")]
         public bool attackInput;
+        [BoxGroup("Combat")]
         public bool altInput;
+        [BoxGroup("Combat")]
         public bool reloadInput;
+        [BoxGroup("Combat")]
         public bool sideInput;
+        [BoxGroup("Combat")]
         public bool primaryInput;
+        [BoxGroup("Combat")]
         public bool secondaryInput;
+        [BoxGroup("Combat")]
         public bool fireSwitchInput;
 
         private void Awake()

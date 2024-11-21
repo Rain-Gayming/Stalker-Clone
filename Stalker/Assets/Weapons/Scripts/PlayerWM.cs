@@ -1,21 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using RainGayming.Combat;
+using RainGayming.Game;
 using RainGayming.Inputs;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace RainGayming.Combat
 {
     public class PlayerWM : MonoBehaviour
     {
-        [Header("Reference")]
+        [BoxGroup("Reference")]
         public InputManager inputs;
 
 
-        [Header("Weapons")]
+        [BoxGroup("Weapons")]
         public WeaponManager currentWeapon;
+        [BoxGroup("Weapons")]
         public WeaponManager primaryWeapon;
+        [BoxGroup("Weapons")]
         public WeaponManager secondaryWeapon;
+        [BoxGroup("Weapons")]
         public WeaponManager sideWeapon;
 
         private void Start()
@@ -25,6 +30,9 @@ namespace RainGayming.Combat
 
         public void Update()
         {
+            if (GameManager.instance.isPaused)
+                return;
+
             if (inputs.attackInput)
             {
                 currentWeapon.Attack();

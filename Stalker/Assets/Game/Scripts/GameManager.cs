@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using QFSW.QC;
 using RainGayming.Inputs;
+using RainGayming.Misc;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -10,8 +11,11 @@ namespace RainGayming.Game
 {
     public class GameManager : MonoBehaviour
     {
+        public static GameManager instance;
         [BoxGroup("References")]
         public InputManager inputManager;
+        [BoxGroup("References")]
+        public CursorManager cursorManager;
 
         [BoxGroup("Info")]
         public bool isPaused;
@@ -19,8 +23,14 @@ namespace RainGayming.Game
         [BoxGroup("Consle")]
         public QuantumKeyConfig consoleKeys;
 
+        private void Awake()
+        {
+            instance = this;
+        }
+
         private void Start()
         {
+            cursorManager = CursorManager.instance;
             inputManager = InputManager.instance;
         }
 
@@ -30,6 +40,7 @@ namespace RainGayming.Game
             {
                 isPaused = !isPaused;
                 inputManager.isPaused = isPaused;
+                cursorManager.isPaused = isPaused;
             }
         }
     }

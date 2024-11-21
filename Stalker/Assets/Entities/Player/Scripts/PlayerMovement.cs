@@ -6,44 +6,64 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 using RainGayming.Inputs;
+using Sirenix.OdinInspector;
+using RainGayming.Game;
 
 namespace RainGayming.Player
 {
     public class PlayerMovement : MonoBehaviour
     {
-        [Header("References")]
+        public static PlayerMovement instance;
+        public bool isPaused;
+        [BoxGroup("References")]
         public Rigidbody rb;
+        [BoxGroup("References")]
         public InputManager inputManager;
+        [BoxGroup("References")]
         public Transform orientation;
 
-        [Header("Speed")]
+        [BoxGroup("Speed")]
         public float currentSpeed;
+        [BoxGroup("Speed")]
         public float walkSpeed;
+        [BoxGroup("Speed")]
         public float runSpeed;
+        [BoxGroup("Speed")]
         public float crouchSpeed;
+        [BoxGroup("Speed")]
         public float speedMultiplier = 1;
 
 
-        [Header("Jumping")]
+        [BoxGroup("Jumping")]
         public LayerMask whatIsGround;
+        [BoxGroup("Jumping")]
         public Transform groundCheckPoint;
+        [BoxGroup("Jumping")]
         public bool isGrounded;
+        [BoxGroup("Jumping")]
         public float groundRadius;
+        [BoxGroup("Jumping")]
         public float jumpHeight;
+        [BoxGroup("Jumping")]
         public float jumpMultiplier = 1;
 
-        [Header("Drag")]
+        [BoxGroup("Drag")]
         public float groundDrag;
 
-        [Header("Step")]
+        [BoxGroup("Step")]
         public float maxStepHeight;
+        [BoxGroup("Step")]
         public float wallDistance;
+        [BoxGroup("Step")]
         public bool hasWallInfront;
+        [BoxGroup("Step")]
         public Transform wallCheckPoint;
 
-        [Header("Debug")]
+        [BoxGroup("Debug")]
         public float horizontalInput;
+        [BoxGroup("Debug")]
         public float verticalInput;
+        [BoxGroup("Debug")]
         public Vector3 movementDirection;
 
         private void Start()
@@ -57,44 +77,47 @@ namespace RainGayming.Player
 
         private void Update()
         {
-            horizontalInput = inputManager.movementInput.x;
-            verticalInput = inputManager.movementInput.y;
-
-            isGrounded = Physics.Raycast(groundCheckPoint.position, -groundCheckPoint.up, groundRadius, whatIsGround);
-            hasWallInfront = Physics.Raycast(groundCheckPoint.position, groundCheckPoint.forward, wallDistance, whatIsGround);
-
-            //if the player is moving forward
-            if (verticalInput! >= 0.5)
+            if (!GameManager.instance.isPaused)
             {
-                if (hasWallInfront)
-                {
-                    //checks if the wall isnt too high
-                    if (!Physics.Raycast(wallCheckPoint.position, groundCheckPoint.forward, wallDistance, whatIsGround))
-                    {
-                        //sets the players y pos to the right one
-                        transform.position = new Vector3(transform.position.x, transform.position.y + maxStepHeight, transform.position.z);
+                horizontalInput = inputManager.movementInput.x;
+                verticalInput = inputManager.movementInput.y;
 
-                        //pushes the player forward
-                        rb.AddForce(orientation.forward * maxStepHeight, ForceMode.Impulse);
+                isGrounded = Physics.Raycast(groundCheckPoint.position, -groundCheckPoint.up, groundRadius, whatIsGround);
+                hasWallInfront = Physics.Raycast(groundCheckPoint.position, groundCheckPoint.forward, wallDistance, whatIsGround);
+
+                //if the player is moving forward
+                if (verticalInput! >= 0.5)
+                {
+                    if (hasWallInfront)
+                    {
+                        //checks if the wall isnt too high
+                        if (!Physics.Raycast(wallCheckPoint.position, groundCheckPoint.forward, wallDistance, whatIsGround))
+                        {
+                            //sets the players y pos to the right one
+                            transform.position = new Vector3(transform.position.x, transform.position.y + maxStepHeight, transform.position.z);
+
+                            //pushes the player forward
+                            rb.AddForce(orientation.forward * maxStepHeight, ForceMode.Impulse);
+                        }
                     }
                 }
-            }
 
-            if (isGrounded)
-            {
-                rb.drag = groundDrag;
-            }
-            else
-            {
-                rb.drag = 0;
-            }
+                if (isGrounded)
+                {
+                    rb.drag = groundDrag;
+                }
+                else
+                {
+                    rb.drag = 0;
+                }
 
-            if (inputManager.jumpInput)
-            {
-                Jump();
-            }
+                if (inputManager.jumpInput)
+                {
+                    Jump();
+                }
 
-            SpeedControl();
+                SpeedControl();
+            }
         }
 
         private void FixedUpdate()
