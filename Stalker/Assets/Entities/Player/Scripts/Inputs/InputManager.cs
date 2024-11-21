@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using QFSW.QC;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
@@ -11,7 +12,8 @@ namespace RainGayming.Inputs
         public static InputManager instance;
 
         PlayerInputs inputs;
-
+        public bool isPaused;
+        public QuantumKeyConfig consoleKey;
         [Header("Movement Inputs")]
         public Vector2 movementInput;
         public bool jumpInput;
@@ -43,28 +45,35 @@ namespace RainGayming.Inputs
 
         void Update()
         {
-            movementInput = inputs.Movement.movement.ReadValue<Vector2>();
-            cameraLook = inputs.Camera.look.ReadValue<Vector2>();
+            if (consoleKey.ToggleConsoleVisibilityKey.IsPressed())
+            {
+                isPaused = !isPaused;
+            }
+            if (!isPaused)
+            {
+                movementInput = inputs.Movement.movement.ReadValue<Vector2>();
+                cameraLook = inputs.Camera.look.ReadValue<Vector2>();
 
-            inputs.Movement.jump.performed += _ => jumpInput = true;
-            inputs.Movement.jump.canceled += _ => jumpInput = false;
-            inputs.Movement.crouch.performed += _ => crouchInput = true;
-            inputs.Movement.crouch.canceled += _ => crouchInput = false;
-            inputs.Movement.sprint.performed += _ => sprintInput = true;
-            inputs.Movement.sprint.canceled += _ => sprintInput = false;
+                inputs.Movement.jump.performed += _ => jumpInput = true;
+                inputs.Movement.jump.canceled += _ => jumpInput = false;
+                inputs.Movement.crouch.performed += _ => crouchInput = true;
+                inputs.Movement.crouch.canceled += _ => crouchInput = false;
+                inputs.Movement.sprint.performed += _ => sprintInput = true;
+                inputs.Movement.sprint.canceled += _ => sprintInput = false;
 
-            inputs.Combat.attack.performed += _ => attackInput = true;
-            inputs.Combat.attack.canceled += _ => attackInput = false;
-            inputs.Combat.alt.performed += _ => altInput = true;
-            inputs.Combat.alt.canceled += _ => altInput = false;
-            inputs.Combat.side.performed += _ => sideInput = true;
-            inputs.Combat.side.canceled += _ => sideInput = false;
-            inputs.Combat.primary.performed += _ => primaryInput = true;
-            inputs.Combat.primary.canceled += _ => primaryInput = false;
-            inputs.Combat.secondary.performed += _ => secondaryInput = true;
-            inputs.Combat.secondary.canceled += _ => secondaryInput = false;
-            inputs.Combat.fireSwitch.performed += _ => fireSwitchInput = true;
-            inputs.Combat.fireSwitch.canceled += _ => fireSwitchInput = false;
+                inputs.Combat.attack.performed += _ => attackInput = true;
+                inputs.Combat.attack.canceled += _ => attackInput = false;
+                inputs.Combat.alt.performed += _ => altInput = true;
+                inputs.Combat.alt.canceled += _ => altInput = false;
+                inputs.Combat.side.performed += _ => sideInput = true;
+                inputs.Combat.side.canceled += _ => sideInput = false;
+                inputs.Combat.primary.performed += _ => primaryInput = true;
+                inputs.Combat.primary.canceled += _ => primaryInput = false;
+                inputs.Combat.secondary.performed += _ => secondaryInput = true;
+                inputs.Combat.secondary.canceled += _ => secondaryInput = false;
+                inputs.Combat.fireSwitch.performed += _ => fireSwitchInput = true;
+                inputs.Combat.fireSwitch.canceled += _ => fireSwitchInput = false;
+            }
         }
     }
 }
