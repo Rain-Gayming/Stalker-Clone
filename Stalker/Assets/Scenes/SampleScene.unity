@@ -2128,7 +2128,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.70710707, w: 0.7071066}
   m_LocalPosition: {x: 0.61999893, y: 0.010007381, z: 8.060001}
-  m_LocalScale: {x: 0.21000001, y: 26.251553, z: 3.7505999}
+  m_LocalScale: {x: 0.254751, y: 26.251553, z: 3.7505999}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 758161650}
@@ -2239,7 +2239,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.70710707, w: 0.7071066}
   m_LocalPosition: {x: 0.7999954, y: 0.010007381, z: -8.16}
-  m_LocalScale: {x: 0.21000001, y: 26.251553, z: 3.7505999}
+  m_LocalScale: {x: 0.254751, y: 26.251553, z: 3.7505999}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 758161650}
@@ -4183,7 +4183,7 @@ Transform:
   m_GameObject: {fileID: 758161649}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 1.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5808,8 +5808,8 @@ Transform:
   m_GameObject: {fileID: 1014470923}
   serializedVersion: 2
   m_LocalRotation: {x: 0.49999943, y: 0.49999982, z: 0.50000054, w: 0.50000036}
-  m_LocalPosition: {x: 14.04998, y: 0.0100159645, z: 0.040000916}
-  m_LocalScale: {x: 0.21000001, y: 21.58543, z: 3.7505999}
+  m_LocalPosition: {x: 14.04998, y: 0.010017, z: 0.040000916}
+  m_LocalScale: {x: 0.254751, y: 21.58543, z: 3.7505999}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 758161650}
@@ -6735,8 +6735,8 @@ Transform:
   m_GameObject: {fileID: 1215255380}
   serializedVersion: 2
   m_LocalRotation: {x: 0.49999943, y: 0.49999982, z: 0.50000054, w: 0.50000036}
-  m_LocalPosition: {x: -13.950001, y: 0.009999752, z: -2.3499985}
-  m_LocalScale: {x: 0.21000001, y: 17.117895, z: 3.7505999}
+  m_LocalPosition: {x: -13.950001, y: 0.0099983, z: -2.3499985}
+  m_LocalScale: {x: 0.254751, y: 17.117895, z: 3.7505999}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 758161650}

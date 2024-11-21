@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using QFSW.QC;
+using RainGayming.Combat;
 using RainGayming.Inputs;
 using RainGayming.Misc;
 using Sirenix.OdinInspector;
@@ -16,6 +17,8 @@ namespace RainGayming.Game
         public InputManager inputManager;
         [BoxGroup("References")]
         public CursorManager cursorManager;
+        [BoxGroup("References")]
+        public PlayerWM playerWM;
 
         [BoxGroup("Info")]
         public bool isPaused;
@@ -41,6 +44,7 @@ namespace RainGayming.Game
                 isPaused = !isPaused;
                 inputManager.isPaused = isPaused;
                 cursorManager.isPaused = isPaused;
+                playerWM.isPaused = isPaused;
             }
         }
     }

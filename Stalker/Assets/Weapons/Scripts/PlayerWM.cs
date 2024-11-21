@@ -10,6 +10,8 @@ namespace RainGayming.Combat
 {
     public class PlayerWM : MonoBehaviour
     {
+        public static PlayerWM instance;
+        public bool isPaused;
         [BoxGroup("Reference")]
         public InputManager inputs;
 
@@ -23,6 +25,11 @@ namespace RainGayming.Combat
         [BoxGroup("Weapons")]
         public WeaponManager sideWeapon;
 
+        private void Awake()
+        {
+            instance = this;
+        }
+
         private void Start()
         {
             inputs = InputManager.instance;
@@ -30,24 +37,24 @@ namespace RainGayming.Combat
 
         public void Update()
         {
-            if (GameManager.instance.isPaused)
-                return;
-
-            if (inputs.attackInput)
+            if (isPaused)
             {
-                currentWeapon.Attack();
-            }
-            if (inputs.reloadInput)
-            {
-                inputs.reloadInput = false;
-                RangedWM ranged = currentWeapon as RangedWM;
-                ranged.Reload();
-            }
-            if (inputs.fireSwitchInput)
-            {
-                RangedWM ranged = currentWeapon as RangedWM;
-                ranged.FireModeSwitch();
-                inputs.fireSwitchInput = false;
+                if (inputs.attackInput)
+                {
+                    currentWeapon.Attack();
+                }
+                if (inputs.reloadInput)
+                {
+                    inputs.reloadInput = false;
+                    RangedWM ranged = currentWeapon as RangedWM;
+                    ranged.Reload();
+                }
+                if (inputs.fireSwitchInput)
+                {
+                    RangedWM ranged = currentWeapon as RangedWM;
+                    ranged.FireModeSwitch();
+                    inputs.fireSwitchInput = false;
+                }
             }
         }
 

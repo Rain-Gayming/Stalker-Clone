@@ -7,7 +7,13 @@ namespace RainGayming.Combat
 {
     public class WeaponManager : MonoBehaviour
     {
-        public virtual void Attack() { }
+        public bool isPaused;
+        public virtual void Attack()
+        {
+            if (isPaused)
+                return;
+
+        }
     }
 
 }
