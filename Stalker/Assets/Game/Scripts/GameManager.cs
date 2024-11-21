@@ -1,18 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using QFSW.QC;
+using RainGayming.Inputs;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+namespace RainGayming.Game
 {
-    // Start is called before the first frame update
-    void Start()
+    public class GameManager : MonoBehaviour
     {
-        
-    }
+        [BoxGroup("References")]
+        public InputManager inputManager;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        [BoxGroup("Info")]
+        public bool isPaused;
+
+        [BoxGroup("Consle")]
+        public QuantumKeyConfig consoleKeys;
+
+        private void Start()
+        {
+            inputManager = InputManager.instance;
+        }
+
+        public void Update()
+        {
+            if (consoleKeys.ToggleConsoleVisibilityKey.IsPressed())
+            {
+                isPaused = !isPaused;
+                inputManager.isPaused = isPaused;
+            }
+        }
     }
 }

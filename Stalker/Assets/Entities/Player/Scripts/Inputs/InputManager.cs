@@ -45,10 +45,6 @@ namespace RainGayming.Inputs
 
         void Update()
         {
-            if (consoleKey.ToggleConsoleVisibilityKey.IsPressed())
-            {
-                isPaused = !isPaused;
-            }
             if (!isPaused)
             {
                 movementInput = inputs.Movement.movement.ReadValue<Vector2>();

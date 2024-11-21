@@ -11282,6 +11282,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 267f70cf1518c84449e7aa5032aa6dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputManager: {fileID: 0}
+  isPaused: 0
+  consoleKeys: {fileID: 11400000, guid: 090da11157287de47ae5c615b8ed3cf9, type: 2}
 --- !u!114 &1926378429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11294,6 +11297,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dff930ccf30c0440afbdfc4fc691073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPaused: 0
+  consoleKey: {fileID: 11400000, guid: 090da11157287de47ae5c615b8ed3cf9, type: 2}
   movementInput: {x: 0, y: 0}
   jumpInput: 0
   sprintInput: 0
