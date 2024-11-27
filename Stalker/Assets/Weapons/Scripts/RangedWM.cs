@@ -64,7 +64,7 @@ namespace RainGayming.Combat
             //do reload animation
             yield return new WaitForSeconds(gunInfo.reloadTime);
             //stop reload animation
-            if(currentAmmo > 0){
+            if(currentAmmo != 0){
                 currentAmmo = gunInfo.baseMagSize;
             }else if(gunInfo.hasChamber){
                 currentAmmo = gunInfo.baseMagSize + 1;

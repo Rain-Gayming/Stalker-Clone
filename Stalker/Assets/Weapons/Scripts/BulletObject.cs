@@ -13,7 +13,7 @@ namespace RainGayming.Combat
 
         public void Start()
         {
-            rb.AddForce(transform.forward * gunInfo.baseVelocity * 15);
+            rb.AddForce(transform.forward * gunInfo.baseVelocity);
         }
 
         void OnTriggerEnter(Collider other)
