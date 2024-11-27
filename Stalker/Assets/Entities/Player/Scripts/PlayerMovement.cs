@@ -85,7 +85,7 @@ namespace RainGayming.Player
                 verticalInput = inputManager.movementInput.y;
 
                 isGrounded = Physics.Raycast(groundCheckPoint.position, -groundCheckPoint.up, groundRadius, whatIsGround);
-                hasWallInfront = Physics.Raycast(groundCheckPoint.position, groundCheckPoint.forward, wallDistance, whatIsGround);
+                hasWallInfront = Physics.Raycast(groundCheckPoint.position, groundCheckPoint.forward, wallDistance, whatIsStepable);
 
                 //if the player is moving forward
                 if (verticalInput! >= 0.5)
@@ -93,8 +93,9 @@ namespace RainGayming.Player
                     if (hasWallInfront)
                     {
                         //checks if the wall isnt too high
-                        if (!Physics.Raycast(wallCheckPoint.position, groundCheckPoint.forward, wallDistance, whatIsStepable))
+                        if (!Physics.Raycast(wallCheckPoint.position, groundCheckPoint.forward, wallDistance))
                         {
+                            print("Stepping");
                             //sets the players y pos to the right one
                             transform.position = new Vector3(transform.position.x, transform.position.y + maxStepHeight, transform.position.z);
 

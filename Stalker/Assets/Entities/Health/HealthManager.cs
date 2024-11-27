@@ -147,6 +147,7 @@ namespace RainGayming.Health
             if (headHealth <= 0 || chestHealth <= 0)
             {
                 print("dead");
+                Destroy(gameObject);
             }
 
             //adds up the health of your limbs
@@ -156,6 +157,7 @@ namespace RainGayming.Health
             if (totalLimbHealth <= 0)
             {
                 print("dead");
+                Destroy(gameObject);
             }
         }
     }

@@ -15,5 +15,10 @@ namespace RainGayming.Combat
         {
             rb.AddForce(transform.forward * gunInfo.baseVelocity * 15);
         }
+
+        void OnTriggerEnter(Collider other)
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -340,6 +340,10 @@ MonoBehaviour:
     icon: VideoPlayer Icon
     color: {r: 0.5764706, g: 0.43921572, b: 0.8588236, a: 1}
   _sceneHistory:
+  - name: DemoScene
+    path: Assets/ProceduralTerrainPainter/_Demo/DemoScene.unity
   - name: SampleScene
     path: Assets/Scenes/SampleScene.unity
+  - name: Demo
+    path: Assets/TerrainTexturesPackFree/DemoScene/Demo.unity
   _notes: []

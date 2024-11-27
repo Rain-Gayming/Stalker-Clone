@@ -14,6 +14,15 @@ namespace RainGayming.Inventory
         [BoxGroup("Gun Info")]
         public List<FireMode> fireModes;
 
+        [BoxGroup("Gun Animations/Base")]
+        public Vector3 basePosition;
+        [BoxGroup("Gun Animations/Base")]
+        public Quaternion baseRotation;
+        [BoxGroup("Gun Animations/Aim")]
+        public Vector3 aimPosition;
+        [BoxGroup("Gun Animations/Aim")]
+        public Quaternion aimRotation;
+
         public override void SetDescription()
         {
             base.SetDescription();
