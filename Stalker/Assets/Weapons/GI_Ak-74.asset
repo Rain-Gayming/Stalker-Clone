@@ -26,3 +26,10 @@ MonoBehaviour:
   attackTime: 0.16666
   baseVelocity: 300
   fireModes: 000000000100000002000000
+  hasChamber: 1
+  baseMagSize: 30
+  reloadTime: 1.5
+  basePosition: {x: 0.125, y: -0.238, z: 0.294}
+  baseRotation: {x: 0, y: -0.008726535, z: 0, w: 0.9999619}
+  aimPosition: {x: -0.001, y: -0.197, z: 0.294}
+  aimRotation: {x: 0, y: 0, z: 0, w: 0}
