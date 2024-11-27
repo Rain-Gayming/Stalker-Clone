@@ -38,6 +38,11 @@ namespace RainGayming.Combat
                 canShoot = true;
                 print("Can Shoot");
             }
+
+            if (inputs.reloadInput){
+                inputs.reloadInput = false;
+                Reload();
+            }
         }
 
         public void FireModeSwitch()
@@ -51,7 +56,19 @@ namespace RainGayming.Combat
 
         public void Reload()
         {
+            StartCoroutine(ReloadCo());
+        }
 
+        public IEnumerator ReloadCo()
+        {
+            //do reload animation
+            yield return new WaitForSeconds(gunInfo.reloadTime);
+            //stop reload animation
+            if(currentAmmo > 0){
+                currentAmmo = gunInfo.baseMagSize;
+            }else if(gunInfo.hasChamber){
+                currentAmmo = gunInfo.baseMagSize + 1;
+            }
         }
 
         public override void Attack()

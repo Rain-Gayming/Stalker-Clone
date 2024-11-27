@@ -82,6 +82,8 @@ namespace RainGayming.Inputs
                 inputs.Combat.secondary.canceled += _ => secondaryInput = false;
                 inputs.Combat.fireSwitch.performed += _ => fireSwitchInput = true;
                 inputs.Combat.fireSwitch.canceled += _ => fireSwitchInput = false;
+                inputs.Combat.reload.performed += _ => reloadInput = true;
+                inputs.Combat.reload.canceled += _ => reloadInput = false;
             }
         }
     }

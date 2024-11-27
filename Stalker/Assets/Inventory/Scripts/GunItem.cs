@@ -13,7 +13,14 @@ namespace RainGayming.Inventory
         public float baseVelocity;
         [BoxGroup("Gun Info")]
         public List<FireMode> fireModes;
+        [BoxGroup("Gun Info")]
+        public bool hasChamber;
+        [BoxGroup("Gun Info")]
+        public int baseMagSize;
+        [BoxGroup("Gun Info")]
+        public float reloadTime = 1.5f;
 
+        [BoxGroup("Gun Animations")]
         [BoxGroup("Gun Animations/Base")]
         public Vector3 basePosition;
         [BoxGroup("Gun Animations/Base")]
