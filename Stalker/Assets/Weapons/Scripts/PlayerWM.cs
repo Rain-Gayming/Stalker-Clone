@@ -4,6 +4,7 @@ using RainGayming.Combat;
 using RainGayming.Game;
 using RainGayming.Inputs;
 using Sirenix.OdinInspector;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace RainGayming.Combat
@@ -17,7 +18,12 @@ namespace RainGayming.Combat
 
 
         [BoxGroup("Weapons")]
+        [BoxGroup("Weapons/Current")]
         public WeaponManager currentWeapon;
+        [BoxGroup("Weapons/Current")]
+        public Transform weaponRotator;
+        [BoxGroup("Weapons/Current")]
+        public Transform currentWeaponObject;
         [BoxGroup("Weapons")]
         public WeaponManager primaryWeapon;
         [BoxGroup("Weapons")]
@@ -25,6 +31,11 @@ namespace RainGayming.Combat
         [BoxGroup("Weapons")]
         public WeaponManager sideWeapon;
 
+        [BoxGroup("Weapons/Aiming")]
+        public float aimTime;
+
+        [BoxGroup("Debug")]
+        RangedWM ranged;
         private void Awake()
         {
             instance = this;
@@ -37,6 +48,11 @@ namespace RainGayming.Combat
 
         public void Update()
         {
+            if (currentWeapon.gameObject.GetComponent<RangedWM>())
+            {
+                ranged = currentWeapon as RangedWM;
+            }
+
             if (!isPaused)
             {
                 if (inputs.attackInput)
@@ -46,14 +62,17 @@ namespace RainGayming.Combat
                 if (inputs.reloadInput)
                 {
                     inputs.reloadInput = false;
-                    RangedWM ranged = currentWeapon as RangedWM;
                     ranged.Reload();
                 }
                 if (inputs.fireSwitchInput)
                 {
-                    RangedWM ranged = currentWeapon as RangedWM;
                     ranged.FireModeSwitch();
                     inputs.fireSwitchInput = false;
+                }
+
+                if (inputs.altInput)
+                {
+                    //do animation
                 }
             }
         }

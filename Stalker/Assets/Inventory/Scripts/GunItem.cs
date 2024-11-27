@@ -21,14 +21,7 @@ namespace RainGayming.Inventory
         public float reloadTime = 1.5f;
 
         [BoxGroup("Gun Animations")]
-        [BoxGroup("Gun Animations/Base")]
-        public Vector3 basePosition;
-        [BoxGroup("Gun Animations/Base")]
-        public Quaternion baseRotation;
-        [BoxGroup("Gun Animations/Aim")]
-        public Vector3 aimPosition;
-        [BoxGroup("Gun Animations/Aim")]
-        public Quaternion aimRotation;
+        public string animationName;
 
         public override void SetDescription()
         {
