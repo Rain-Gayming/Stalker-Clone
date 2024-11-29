@@ -28,9 +28,12 @@ namespace RainGayming.Entities
         public void Update()
         {
             //if the AI is at the new point stop
-            if (transform.position.x == currentPoint.transform.position.x && transform.position.z == currentPoint.transform.position.y)
+            if (currentPoint)
             {
-                print("at new point");
+                if (transform.position.x == currentPoint.transform.position.x && transform.position.z == currentPoint.transform.position.y)
+                {
+                    print("at new point");
+                }
             }
             else
             {
@@ -46,6 +49,6 @@ namespace RainGayming.Entities
                 isMoving = false;
             }
         }
-    }
 
+    }
 }
