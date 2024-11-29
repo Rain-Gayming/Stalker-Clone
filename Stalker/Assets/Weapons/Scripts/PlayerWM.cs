@@ -80,11 +80,11 @@ namespace RainGayming.Combat
 
                     if (isAiming)
                     {
-                        currentWeapon.weaponAnim.CrossFadeInFixedTime(currentWeapon.weaponInfo.animationName + "_Aim_Idle", 1f);
+                        currentWeapon.weaponAnim.CrossFadeInFixedTime(currentWeapon.weaponInfo.animationName + "_Aim_Idle", 0.25f);
                     }
                     else
                     {
-                        currentWeapon.weaponAnim.Play(currentWeapon.weaponInfo.animationName + "_Idle");
+                        currentWeapon.weaponAnim.CrossFadeInFixedTime(currentWeapon.weaponInfo.animationName + "_Idle", 0.25f);
                     }
                 }
             }
