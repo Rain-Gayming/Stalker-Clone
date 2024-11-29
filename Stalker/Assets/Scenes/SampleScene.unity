@@ -1328,6 +1328,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPaused: 0
+  weaponInfo: {fileID: 0}
+  weaponAnim: {fileID: 99923097}
   inputs: {fileID: 0}
   gunInfo: {fileID: 11400000, guid: 2e880d63475ba764284ba8315a1d600f, type: 2}
   fireTime: 0

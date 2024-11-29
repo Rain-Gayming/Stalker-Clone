@@ -33,6 +33,8 @@ namespace RainGayming.Combat
 
         [BoxGroup("Weapons/Aiming")]
         public float aimTime;
+        [BoxGroup("Weapons/Aiming")]
+        public bool isAiming;
 
         [BoxGroup("Debug")]
         RangedWM ranged;
@@ -72,7 +74,18 @@ namespace RainGayming.Combat
 
                 if (inputs.altInput)
                 {
-                    //do animation
+                    inputs.altInput = false;
+
+                    isAiming = !isAiming;
+
+                    if (isAiming)
+                    {
+                        currentWeapon.weaponAnim.CrossFadeInFixedTime(currentWeapon.weaponInfo.animationName + "_Aim_Idle", 1f);
+                    }
+                    else
+                    {
+                        currentWeapon.weaponAnim.Play(currentWeapon.weaponInfo.animationName + "_Idle");
+                    }
                 }
             }
         }

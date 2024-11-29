@@ -20,9 +20,6 @@ namespace RainGayming.Inventory
         [BoxGroup("Gun Info")]
         public float reloadTime = 1.5f;
 
-        [BoxGroup("Gun Animations")]
-        public string animationName;
-
         public override void SetDescription()
         {
             base.SetDescription();

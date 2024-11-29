@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using RainGayming.Inputs;
 using RainGayming.Inventory;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 
@@ -9,24 +10,31 @@ namespace RainGayming.Combat
 {
     public class RangedWM : WeaponManager
     {
-        [Header("References")]
+        [BoxGroup("References")]
         public InputManager inputs;
 
-        [Header("Gun Info")]
+        [BoxGroup("Gun Info")]
         public GunItem gunInfo;
+        [BoxGroup("Gun Info")]
         public float fireTime;
+        [BoxGroup("Gun Info")]
         public FireMode currentFireMode;
+        [BoxGroup("Gun Info")]
         public FireMode lastFireMode;
+        [BoxGroup("Gun Info")]
         public bool canShoot;
 
-        [Header("Bullets")]
+        [BoxGroup("Bullets")]
         public int currentAmmo;
+        [BoxGroup("Bullets")]
         public Transform muzzleLocation;
+        [BoxGroup("Bullets")]
         public BulletItem currentBullet;
 
         private void Start()
         {
             inputs = InputManager.instance;
+            weaponInfo = gunInfo;
         }
 
         private void Update()

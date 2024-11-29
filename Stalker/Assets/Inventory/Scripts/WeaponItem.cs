@@ -11,5 +11,8 @@ namespace RainGayming.Inventory
         public float baseDamage;
         [BoxGroup("Weapon Info")]
         public float attackTime;
+
+        [BoxGroup("Animations")]
+        public string animationName;
     }
 }
