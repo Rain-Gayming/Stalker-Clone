@@ -8,24 +8,26 @@ namespace RainGayming.Entities
     public class NavigationArea : MonoBehaviour
     {
         [BoxGroup("References")]
-        public List<Transform> navigationPoints;
+        public NavigationPoint[] navigationPoints;
 
-        public void Start()
+        public void Awake()
         {
-            NavigationPoint[] points = GetComponentsInChildren<NavigationPoint>();
-
-            for (int i = 0; i < points.Length; i++)
-            {
-                navigationPoints.Add(points[i].transform);
-            }
+            navigationPoints = GetComponentsInChildren<NavigationPoint>();
         }
 
         public Transform GetPoint()
         {
-            //gets a random number 
-            int randomPoint = Random.Range(0, navigationPoints.Count);
-            Transform point = navigationPoints[randomPoint];
-            return point;
+            Transform newPoint = navigationPoints[Random.Range(0, navigationPoints.Length)].transform;
+
+            if (newPoint == null)
+            {
+                print("cant return a point");
+                return null;
+            }
+
+            print(newPoint);
+
+            return newPoint;
         }
     }
 }

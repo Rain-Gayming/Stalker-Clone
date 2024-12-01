@@ -27,26 +27,22 @@ namespace RainGayming.Entities
 
         public void Update()
         {
-            //if the AI is at the new point stop
-            if (currentPoint)
+
+        }
+
+        public void UpdateAI()
+        {
+            if (isMoving)
             {
-                if (transform.position.x == currentPoint.transform.position.x && transform.position.z == currentPoint.transform.position.y)
-                {
-                    print("at new point");
-                }
+
             }
             else
             {
-                //if moving do nothing
-                if (isMoving)
-                    return;
-
-                //get a random point
                 currentPoint = navigationArea.GetPoint();
 
-                //else move to the point
+                print(currentPoint.position);
                 agent.Move(currentPoint.position);
-                isMoving = false;
+                isMoving = true;
             }
         }
 

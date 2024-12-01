@@ -454,7 +454,9 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3149037910808681464, guid: 1cf153dbb1f71ce4e80295e0708a55de, type: 3}
+    - {fileID: 6111765940223353979, guid: 1cf153dbb1f71ce4e80295e0708a55de, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 84039288782850721, guid: 1cf153dbb1f71ce4e80295e0708a55de,
@@ -560,9 +562,13 @@ MonoBehaviour:
   isPaused: 0
   inputs: {fileID: 0}
   currentWeapon: {fileID: 0}
+  weaponRotator: {fileID: 0}
+  currentWeaponObject: {fileID: 0}
   primaryWeapon: {fileID: 0}
   secondaryWeapon: {fileID: 0}
   sideWeapon: {fileID: 0}
+  aimTime: 0
+  isAiming: 0
 --- !u!54 &9031566282521430020
 Rigidbody:
   m_ObjectHideFlags: 0
