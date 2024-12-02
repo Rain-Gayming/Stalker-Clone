@@ -23,6 +23,8 @@ namespace RainGayming.Combat
         public FireMode lastFireMode;
         [BoxGroup("Gun Info")]
         public bool canShoot;
+        [BoxGroup("Gun Info")]
+        public bool isReloading;
 
         [BoxGroup("Bullets")]
         public int currentAmmo;
@@ -47,7 +49,8 @@ namespace RainGayming.Combat
                 print("Can Shoot");
             }
 
-            if (inputs.reloadInput){
+            if (inputs.reloadInput)
+            {
                 inputs.reloadInput = false;
                 Reload();
             }
@@ -57,7 +60,8 @@ namespace RainGayming.Combat
         {
             lastFireMode = currentFireMode;
 
-            if(gunInfo.fireModes.Contains(lastFireMode + 1)){
+            if (gunInfo.fireModes.Contains(lastFireMode + 1))
+            {
                 print("yippe");
             }
         }
@@ -70,18 +74,26 @@ namespace RainGayming.Combat
         public IEnumerator ReloadCo()
         {
             //do reload animation
+            isReloading = true;
             yield return new WaitForSeconds(gunInfo.reloadTime);
             //stop reload animation
-            if(currentAmmo != 0){
+
+            //if you already have a bullet in your chamber add it to the ammo pool
+            if (currentAmmo != 0)
+            {
                 currentAmmo = gunInfo.baseMagSize;
-            }else if(gunInfo.hasChamber){
+            }
+            else if (gunInfo.hasChamber)
+            {
                 currentAmmo = gunInfo.baseMagSize + 1;
             }
+
+            isReloading = true;
         }
 
         public override void Attack()
         {
-            if (fireTime <= 0 && currentAmmo > 0 && canShoot)
+            if (fireTime <= 0 && currentAmmo > 0 && canShoot && !isReloading)
             {
                 switch (currentFireMode)
                 {
