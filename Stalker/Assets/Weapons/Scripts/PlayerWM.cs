@@ -38,6 +38,8 @@ namespace RainGayming.Combat
         public float aimTime;
         [BoxGroup("Weapons/Aiming")]
         public bool isAiming;
+        [BoxGroup("Weapons/Aiming")]
+        public bool isCanted;
 
         [BoxGroup("Debug")]
         RangedWM ranged;
@@ -95,6 +97,26 @@ namespace RainGayming.Combat
                     inputs.fireSwitchInput = false;
                 }
 
+                //if a ranged weapon and pressing the combo
+                if (inputs.altInput && inputs.crouchInput && ranged != null)
+                {
+                    timeSinceLastInput = 0f;
+                    inputs.altInput = false;
+                    inputs.crouchInput = false;
+                    isCanted = !isCanted;
+                    isAiming = !isAiming;
+
+                    //if canted play the canted aim anim others wise play the normal one
+                    if (isCanted)
+                    {
+                        currentWeapon.weaponAnim.CrossFadeInFixedTime(currentWeapon.weaponInfo.animationName + "_Aim_Canted", 0.25f);
+                    }
+                    else
+                    {
+                        currentWeapon.weaponAnim.CrossFadeInFixedTime(currentWeapon.weaponInfo.animationName + "_Aim_Idle", 0.25f);
+                    }
+                }
+
                 if (inputs.altInput)
                 {
                     timeSinceLastInput = 0f;
@@ -107,7 +129,15 @@ namespace RainGayming.Combat
 
                         if (isAiming)
                         {
-                            currentWeapon.weaponAnim.CrossFadeInFixedTime(currentWeapon.weaponInfo.animationName + "_Aim_Idle", 0.25f);
+                            //if canted play the canted aim anim others wise play the normal one
+                            if (isCanted)
+                            {
+                                currentWeapon.weaponAnim.CrossFadeInFixedTime(currentWeapon.weaponInfo.animationName + "_Aim_Canted", 0.25f);
+                            }
+                            else
+                            {
+                                currentWeapon.weaponAnim.CrossFadeInFixedTime(currentWeapon.weaponInfo.animationName + "_Aim_Idle", 0.25f);
+                            }
                         }
                         else
                         {
