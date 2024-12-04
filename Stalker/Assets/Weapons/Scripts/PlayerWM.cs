@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using RainGayming.Combat;
 using RainGayming.Game;
 using RainGayming.Inputs;
@@ -33,6 +34,9 @@ namespace RainGayming.Combat
 
         [BoxGroup("Weapons/Animations")]
         public float timeSinceLastInput;
+        [BoxGroup("Weapons/Animations")]
+        public bool isWeaponLowered;
+
 
         [BoxGroup("Weapons/Aiming")]
         public float aimTime;
@@ -72,7 +76,24 @@ namespace RainGayming.Combat
                 //if the player hasnt given an input lower the weapon
                 if (timeSinceLastInput >= 5)
                 {
+                    isWeaponLowered = true;
                     currentWeapon.weaponAnim.CrossFadeInFixedTime(currentWeapon.weaponInfo.animationName + "_Lowered", 0.25f);
+                }
+
+                //if the player presses the lower button manually it automatically lowers/raises
+                if (inputs.lowerWeaponInput)
+                {
+                    isWeaponLowered = !isWeaponLowered;
+
+                    if (isWeaponLowered)
+                    {
+                        timeSinceLastInput = -15f;
+                        currentWeapon.weaponAnim.CrossFadeInFixedTime(currentWeapon.weaponInfo.animationName + "_Idle", 0.25f);
+                    }
+                    else
+                    {
+                        currentWeapon.weaponAnim.CrossFadeInFixedTime(currentWeapon.weaponInfo.animationName + "_Lowered", 0.25f);
+                    }
                 }
 
                 //attack with the weapon

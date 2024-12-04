@@ -44,6 +44,8 @@ namespace RainGayming.Inputs
         public bool secondaryInput;
         [BoxGroup("Combat")]
         public bool fireSwitchInput;
+        [BoxGroup("Combat")]
+        public bool lowerWeaponInput;
 
         private void Awake()
         {
@@ -84,6 +86,8 @@ namespace RainGayming.Inputs
                 inputs.Combat.fireSwitch.canceled += _ => fireSwitchInput = false;
                 inputs.Combat.reload.performed += _ => reloadInput = true;
                 inputs.Combat.reload.canceled += _ => reloadInput = false;
+                inputs.Combat.lowerWeapon.performed += _ => lowerWeaponInput = true;
+                inputs.Combat.lowerWeapon.canceled += _ => lowerWeaponInput = false;
             }
         }
     }

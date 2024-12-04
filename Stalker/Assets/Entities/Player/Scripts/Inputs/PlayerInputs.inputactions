@@ -249,6 +249,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "lowerWeapon",
+                    "type": "Button",
+                    "id": "bea4aeb5-3a67-4f1d-8f4c-74ad50f1ea48",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -326,6 +335,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "fireSwitch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "58f8d5ee-5635-4bce-b00c-ec05b57ac9c0",
+                    "path": "<Keyboard>/n",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "lowerWeapon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

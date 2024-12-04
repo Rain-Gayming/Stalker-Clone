@@ -271,6 +271,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""lowerWeapon"",
+                    ""type"": ""Button"",
+                    ""id"": ""bea4aeb5-3a67-4f1d-8f4c-74ad50f1ea48"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -350,6 +359,17 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""fireSwitch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""58f8d5ee-5635-4bce-b00c-ec05b57ac9c0"",
+                    ""path"": ""<Keyboard>/n"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""lowerWeapon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -374,6 +394,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_Combat_side = m_Combat.FindAction("side", throwIfNotFound: true);
         m_Combat_reload = m_Combat.FindAction("reload", throwIfNotFound: true);
         m_Combat_fireSwitch = m_Combat.FindAction("fireSwitch", throwIfNotFound: true);
+        m_Combat_lowerWeapon = m_Combat.FindAction("lowerWeapon", throwIfNotFound: true);
     }
 
     ~@PlayerInputs()
@@ -565,6 +586,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_Combat_side;
     private readonly InputAction m_Combat_reload;
     private readonly InputAction m_Combat_fireSwitch;
+    private readonly InputAction m_Combat_lowerWeapon;
     public struct CombatActions
     {
         private @PlayerInputs m_Wrapper;
@@ -576,6 +598,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @side => m_Wrapper.m_Combat_side;
         public InputAction @reload => m_Wrapper.m_Combat_reload;
         public InputAction @fireSwitch => m_Wrapper.m_Combat_fireSwitch;
+        public InputAction @lowerWeapon => m_Wrapper.m_Combat_lowerWeapon;
         public InputActionMap Get() { return m_Wrapper.m_Combat; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -606,6 +629,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @fireSwitch.started += instance.OnFireSwitch;
             @fireSwitch.performed += instance.OnFireSwitch;
             @fireSwitch.canceled += instance.OnFireSwitch;
+            @lowerWeapon.started += instance.OnLowerWeapon;
+            @lowerWeapon.performed += instance.OnLowerWeapon;
+            @lowerWeapon.canceled += instance.OnLowerWeapon;
         }
 
         private void UnregisterCallbacks(ICombatActions instance)
@@ -631,6 +657,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @fireSwitch.started -= instance.OnFireSwitch;
             @fireSwitch.performed -= instance.OnFireSwitch;
             @fireSwitch.canceled -= instance.OnFireSwitch;
+            @lowerWeapon.started -= instance.OnLowerWeapon;
+            @lowerWeapon.performed -= instance.OnLowerWeapon;
+            @lowerWeapon.canceled -= instance.OnLowerWeapon;
         }
 
         public void RemoveCallbacks(ICombatActions instance)
@@ -668,5 +697,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnSide(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
         void OnFireSwitch(InputAction.CallbackContext context);
+        void OnLowerWeapon(InputAction.CallbackContext context);
     }
 }
