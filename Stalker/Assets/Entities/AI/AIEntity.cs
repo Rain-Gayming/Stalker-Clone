@@ -49,7 +49,7 @@ namespace RainGayming.Entities
                 isWaiting = false;
             }
 
-            if (!isWaiting && !isMoving)
+            if (!isWaiting && !isMoving && navigationArea != null)
             {
                 currentPoint = navigationArea.GetPoint();
                 agent.SetDestination(currentPoint.position);

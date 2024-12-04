@@ -31,6 +31,9 @@ namespace RainGayming.Combat
         [BoxGroup("Weapons")]
         public WeaponManager sideWeapon;
 
+        [BoxGroup("Weapons/Animations")]
+        public float timeSinceLastInput;
+
         [BoxGroup("Weapons/Aiming")]
         public float aimTime;
         [BoxGroup("Weapons/Aiming")]
@@ -54,19 +57,39 @@ namespace RainGayming.Combat
             {
                 ranged = currentWeapon as RangedWM;
             }
+            else
+            {
+                ranged = null;
+            }
 
             if (!isPaused)
             {
+                timeSinceLastInput += Time.deltaTime;
+
+
+                //if the player hasnt given an input lower the weapon
+                if (timeSinceLastInput >= 5)
+                {
+                    currentWeapon.weaponAnim.CrossFadeInFixedTime(currentWeapon.weaponInfo.animationName + "_Lowered", 0.25f);
+                }
+
+                //attack with the weapon
                 if (inputs.attackInput)
                 {
                     currentWeapon.Attack();
+                    timeSinceLastInput = 0f;
                 }
-                if (inputs.reloadInput)
+
+                //if a gun reload the weapon
+                if (inputs.reloadInput && ranged != null)
                 {
                     inputs.reloadInput = false;
                     ranged.Reload();
+                    timeSinceLastInput = 0f;
                 }
-                if (inputs.fireSwitchInput)
+
+                //if a gun switch the fire mode
+                if (inputs.fireSwitchInput && ranged != null)
                 {
                     ranged.FireModeSwitch();
                     inputs.fireSwitchInput = false;
@@ -74,17 +97,22 @@ namespace RainGayming.Combat
 
                 if (inputs.altInput)
                 {
+                    timeSinceLastInput = 0f;
                     inputs.altInput = false;
 
-                    isAiming = !isAiming;
+                    //if a gun aim
+                    if (ranged != null)
+                    {
+                        isAiming = !isAiming;
 
-                    if (isAiming)
-                    {
-                        currentWeapon.weaponAnim.CrossFadeInFixedTime(currentWeapon.weaponInfo.animationName + "_Aim_Idle", 0.25f);
-                    }
-                    else
-                    {
-                        currentWeapon.weaponAnim.CrossFadeInFixedTime(currentWeapon.weaponInfo.animationName + "_Idle", 0.25f);
+                        if (isAiming)
+                        {
+                            currentWeapon.weaponAnim.CrossFadeInFixedTime(currentWeapon.weaponInfo.animationName + "_Aim_Idle", 0.25f);
+                        }
+                        else
+                        {
+                            currentWeapon.weaponAnim.CrossFadeInFixedTime(currentWeapon.weaponInfo.animationName + "_Idle", 0.25f);
+                        }
                     }
                 }
             }
