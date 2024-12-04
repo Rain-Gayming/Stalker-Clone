@@ -16,8 +16,9 @@ namespace RainGayming.Combat
             rb.AddForce(transform.forward * gunInfo.baseVelocity);
         }
 
-        void OnTriggerEnter(Collider other)
+        void OnTriggerStay(Collider other)
         {
+            print("hit something");
             Destroy(gameObject);
         }
     }

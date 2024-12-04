@@ -2,9 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using QFSW.QC;
 using Sirenix.OdinInspector;
-using UnityEditor.SearchService;
 using UnityEngine;
-using UnityEngine.InputSystem.LowLevel;
 
 namespace RainGayming.Inputs
 {
