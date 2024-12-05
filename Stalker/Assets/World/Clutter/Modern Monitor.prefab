@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8984129559608122760}
   - component: {fileID: 3343702517571343590}
   - component: {fileID: 4118786409919336719}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Modern Monitor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

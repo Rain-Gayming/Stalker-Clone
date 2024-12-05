@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1865204472747924262}
   - component: {fileID: 8244747464462152204}
   - component: {fileID: -4315203778903979450}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Keyboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
