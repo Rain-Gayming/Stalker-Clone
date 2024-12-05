@@ -12,7 +12,7 @@ namespace RainGayming.Health
 
         [BoxGroup("Hitbox Info")]
         public HealthManager healthManager;
-        [BoxGroup("Hitbox Info")] 
+        [BoxGroup("Hitbox Info")]
         public Limb limb; public bool isBroken;
 
         private void Start()
