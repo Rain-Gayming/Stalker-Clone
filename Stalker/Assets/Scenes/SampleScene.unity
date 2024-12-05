@@ -1847,7 +1847,7 @@ PrefabInstance:
     - target: {fileID: 8736411832837263942, guid: f0cb2ec20d4071e43b691fd8c032ec9f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 137.22827
+      value: 169.13667
       objectReference: {fileID: 0}
     - target: {fileID: 8736411832837263942, guid: f0cb2ec20d4071e43b691fd8c032ec9f,
         type: 3}
@@ -1857,7 +1857,7 @@ PrefabInstance:
     - target: {fileID: 8736411832837263942, guid: f0cb2ec20d4071e43b691fd8c032ec9f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 672.9834
+      value: 720.22125
       objectReference: {fileID: 0}
     - target: {fileID: 8736411832837263942, guid: f0cb2ec20d4071e43b691fd8c032ec9f,
         type: 3}
@@ -7626,7 +7626,7 @@ Terrain:
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_DetailObjectDistance: 1000
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
